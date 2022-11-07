@@ -14,4 +14,7 @@ app.use(express.static('public'));
 
 app.use('/api/productos', productsRouter); 
 
-app.listen(port, () => console.log(`RUN https://localhost:${port}`))
+app.listen(port, (err) => {
+    if (err) throw new Error(`Error en el servidor ${err}`);
+    console.log(`RUNNING https://localhost:${port}`)
+});
