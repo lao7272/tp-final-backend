@@ -16,5 +16,5 @@ app.use('/api/productos', productsRouter);
 
 app.listen(port, (err) => {
     if (err) throw new Error(`Error en el servidor ${err}`);
-    console.log(`RUNNING https://localhost:${port}`)
+    console.log(`RUNNING https://localhost:${port}`);
 });
