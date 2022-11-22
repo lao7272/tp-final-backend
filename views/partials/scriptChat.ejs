@@ -1,0 +1,40 @@
+<script src="https://cdn.socket.io/4.5.3/socket.io.min.js" integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
+<script >
+    const socket = io();
+    socket.on('conversation', (data) => {
+
+    const divMessages = document.getElementById('messages');
+
+    divMessages.innerHTML = '';
+
+    data.map((message) => {
+        divMessages.innerHTML += `
+        <div class="m-1" style="">   
+        <p><strong style="color: blue">${message.author}</strong> <em style="color: red"> [${message.dateMessage}]: </em><i style="color: green"> "${message.text}"</i></p>
+        </div>
+        `
+    });
+
+
+
+});
+
+    const chatForm = document.getElementById('chatForm');
+    chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const date = new Date();
+const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+
+    const text = document.getElementById('text').value;
+    const author = document.getElementById('author').value;
+    const dateMessage = `${day}/${month}/${year} ${hour}:${minutes};${seconds}`
+    const message = { author, text, dateMessage};
+    console.log(message);
+    socket.emit('new-message', message);
+    chatForm.reset();
+
+});
+    
+    
+</script>

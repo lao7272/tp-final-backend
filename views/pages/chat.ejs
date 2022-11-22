@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+    
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+
+    </header>
+    <main class="jumbotron">
+        <form  id="chatForm">
+            <div class="mb-3">
+                <label for="author" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="author" placeholder="Ingrese su nombre "
+                id="author">
+            </div>
+            <div class="mb-3">
+                <label for="text" class="form-label">Mensaje</label>
+                <input type="text" class="form-control" name="text" placeholder="Ingrese mensaje" id="text">
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        <h3>Chat</h3>
+        <div class="jumbotron" id="messages">
+
+        </div>
+            
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+    <%- include('../partials/scriptChat'); %>
+</body>
+
+</html>

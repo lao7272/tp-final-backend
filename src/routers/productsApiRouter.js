@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const productsRouter = Router();
+const productsApiRouter = Router();
 
 const db = [
     {
@@ -16,10 +16,10 @@ const db = [
     }
 ];
 
-productsRouter.get('/', (req, res) => {
+productsApiRouter.get('/', (req, res) => {
     res.json(db);
 });
-productsRouter.get('/:id', (req, res) => {
+productsApiRouter.get('/:id', (req, res) => {
     const product = db.find((product) => product.id === parseInt(req.params.id));
     if (product === undefined) {
         console.log("ERROR: producto no encontrado")
@@ -28,25 +28,28 @@ productsRouter.get('/:id', (req, res) => {
     res.json(product);
 });
 
-productsRouter.post('/', (req, res) => {
+productsApiRouter.post('/', (req, res) => {
     const newProduct = {id: db.length + 1, ...req.body};
     db.push(newProduct);
     res.json(newProduct);
 });
 
-productsRouter.put('/:id', (req, res) => {
+productsApiRouter.put('/:id', (req, res) => {
     const prodToUpdate = db.findIndex(product => product.id === parseInt(req.params.id));
     
     db.splice(prodToUpdate, 1, req.body);
     res.json(req.body);
 });
 
-productsRouter.delete('/:id', (req, res) => {
+productsApiRouter.delete('/:id', (req, res) => {
     const prodToDelete = db.findIndex(product => product.id === parseInt(req.params.id));
     
     const newProducts = db.splice(prodToDelete, 1);
     res.json(newProducts);
 });
 
-module.exports = productsRouter;
+
+
+
+module.exports = productsApiRouter;
 
