@@ -55,7 +55,7 @@ class ProductContainer {
             return data
             
         } catch (error) {
-            console.log(error)
+            return undefined
         }
     } 
     async deleteById(id){

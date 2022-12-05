@@ -2,14 +2,12 @@ const express = require('express');
 const { Server: SocketServer } = require('socket.io');
 const { Server: HttpServer} = require('http');
 
-
 const app = express();
 
 const productsApiRouter = require('./routers/productsApiRouter');
 const formProductsRouter = require('./routers/formProductsRouter');
 const viewProductsRouter = require('./routers/viewProductsRouter');
 const chatRouter = require('./routers/chatRouter');
-
 
 
 

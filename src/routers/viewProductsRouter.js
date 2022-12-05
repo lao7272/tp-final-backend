@@ -1,15 +1,17 @@
 const { Router } = require("express");
 const viewProductsRouter = Router();
-const productContainer = require('../containers/ProductsContainer');
-const prodCont = new productContainer();
+const mysqlConnection = require('../../database/mysqlConnection')
+// const productContainer = require('../containers/ProductsContainer');
+// const prodCont = new productContainer();
+const containerSql = require('../containers/SqlContainer')
+const productContainerSql = new containerSql(mysqlConnection, 'products')
 
-const getProducts = async () => {
-    const dbProducts = await prodCont.getAll() ?? [];
-    viewProductsRouter.get('/', (req, res) => {
-        res.render('pages/showProducts.ejs', {dbProducts})
-    });
-}
-getProducts();
+
+viewProductsRouter.get('/', async (req, res) => {
+    const dbProducts = await productContainerSql.getAll() ?? [];
+    res.render('pages/showProducts.ejs', {dbProducts})
+});
+
 
 
 

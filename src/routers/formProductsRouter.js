@@ -1,23 +1,20 @@
 const { Router } = require("express");
 const formProductsRouter = Router();
-const productContainer = require('../containers/ProductsContainer');
-const prodCont = new productContainer();
 
+const mysqlConnection = require('../../database/mysqlConnection')
+const containerSql = require('../containers/SqlContainer')
+const productContainerSql = new containerSql(mysqlConnection, 'products')
 
-const getProducts = async () => {
-    const dbProducts = await prodCont.getAll();
-
-    formProductsRouter.get('/', (req, res) => {
+    formProductsRouter.get('/', async (req, res) => {
+        const dbProducts = await productContainerSql.getAll() ?? [];
         res.render('pages/form.ejs', {dbProducts});
     });
     
-    formProductsRouter.post('/', (req, res) => {
-        prodCont.save(req.body);
-        console.log(dbProducts);
+    formProductsRouter.post('/', async (req, res) => {
+        await productContainerSql.save(req.body);
         res.redirect('/cargar-productos');
     });
-}
-getProducts();
+
 
 
 
