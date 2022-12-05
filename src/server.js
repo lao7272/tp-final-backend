@@ -15,7 +15,9 @@ app.use(express.static('public'));
 
 app.use('/api/productos', productsRouter); 
 app.use('/api/carrito', cartRouter);
-
+app.all('*', (req, res) => {
+    res.json({message: 'PAGE NOT FOUND'});
+})
 app.listen(port, (err) => {
     if (err) throw new Error(`Error en el servidor ${err}`);
     console.log(`RUNNING https://localhost:${port}`);
