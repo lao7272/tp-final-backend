@@ -1,6 +1,6 @@
 
 const isAdmin = (req, res, next) => {
-    if(req.query.admin === "true"){
+    if(req.body.admin){
         req.admin = true;
         next();
     } else {

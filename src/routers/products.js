@@ -6,54 +6,61 @@ const products = new productContainer();
 const date = require('../lib/utils');
 const isAdmin = require('../middlewares/logAdmin');
 
-const getDb = async () => {
-    const db = await products.getAll() ?? [];
-
-    productsRouter.get('/',(req, res) => {
-        res.json(db);
-    });
 
 
-    productsRouter.get('/:id', (req, res) => {
-        const product = db.find((product) => product.id === parseInt(req.params.id));
-        if (product === undefined) {
-            console.log("ERROR: producto no encontrado")
-            res.json({error: 'producto no encontrado'})
-        } 
-        res.json(product);
-    });
+
+productsRouter.get('/', async (req, res) => {
+    const db = await products.getAllProducts();
+    res.json(db);
+});
 
 
-    
-    productsRouter.post('/', isAdmin,(req, res) => {
-        const newProduct = {id: db.length + 1, ...req.body, ...date};
-        products.save(newProduct);
+productsRouter.get('/:id', async (req, res) => {
+    const product = await products.getProductById(parseInt(req.params.id));
+    if (!product) {
+        console.log("ERROR: producto no encontrado")
+        res.json({message: 'producto no encontrado'})
+    }  
+    res.json(product);
+});
+
+
+
+productsRouter.post('/', isAdmin, async (req, res) => {
+    const newProduct = { ...req.body, ...date};
+    await products.saveProduct(newProduct);
+    const db = await products.getAllProducts();
+    const idProduct = db[db.length - 1];
+
+    res.json({id: idProduct.id});
+});
+
+
+
+productsRouter.put('/:id', isAdmin, async (req, res) => {
+    const findProduct = await products.getProductById(parseInt(req.params.id))
+    if (findProduct) {
+        const newProduct = {id: findProduct.id, ...req.body, ...date}
+        products.updateProduct(newProduct);
         res.json(newProduct);
-    });
+    } else {
+        res.json({message: 'El producto no se encontro'})
+    }
+});
 
 
-    
-    productsRouter.put('/:id', isAdmin, (req, res) => {
-        
-        const indexCart = db.findIndex(product => product.id === parseInt(req.params.id));
-        const idProduct = db[indexCart].id;
-        const newProduct = {idProduct, ...req.body, ...date}
-        products.update(newProduct);
-        db.splice(prodToUpdate, 1, {...req.body, ...date});
-        res.json(req.body);
-    });
-    
+
+productsRouter.delete('/:id', isAdmin, async (req, res) => {
+    const findProduct = await products.getProductById(parseInt(req.params.id));
+    if (findProduct) {        
+        products.deleteProductById(parseInt(req.params.id));
+        res.json(findProduct);
+    } else {
+        res.json({message: "El producto ya ha sido eliminado"});
+    }
+});    
 
 
-    productsRouter.delete('/:id', isAdmin,(req, res) => {
-        const prodToDelete = db.findIndex(product => product.id === parseInt(req.params.id));
-        products.deleteById(parseInt(req.params.id));
-        const newProducts = db.splice(prodToDelete, 1);
-        res.json(newProducts);
-    });    
-}
-
-getDb();
 
 module.exports = productsRouter;
 
