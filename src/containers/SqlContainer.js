@@ -15,9 +15,7 @@ class SqlContainer {
     }
     async getAll(){
         try {
-            
             const db = await this.database.from(`${this.table}`).select("*");
-            console.log('db', db)
             return db;
         } catch (error) {
             console.error(error)

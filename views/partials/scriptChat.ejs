@@ -23,8 +23,8 @@
     chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const date = new Date();
-const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
-const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+    const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+    const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
 
     const text = document.getElementById('text').value;
     const author = document.getElementById('author').value;

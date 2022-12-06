@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const formProductsRouter = Router();
 
-const mysqlConnection = require('../../database/mysqlConnection')
-const containerSql = require('../containers/SqlContainer')
-const productContainerSql = new containerSql(mysqlConnection, 'products')
+const mysqlConnection = require('../../database/mysqlConnection');
+const containerSql = require('../containers/SqlContainer');
+const productContainerSql = new containerSql(mysqlConnection, 'products');
 
     formProductsRouter.get('/', async (req, res) => {
         const dbProducts = await productContainerSql.getAll() ?? [];

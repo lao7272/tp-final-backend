@@ -24,12 +24,12 @@ const createMessageTable = async () => {
     try {
         const database = knex(sqliteConnection);
         
-        await database.schema.dropTableIfExists('products');
-        await database.schema.createTable('products', (table) => {
+        await database.schema.dropTableIfExists('messages');
+        await database.schema.createTable('messages', (table) => {
             table.increments('id').primary();
             table.string('author', 255).notNullable();
             table.string('text', 255).notNullable();
-            table.timestamps('dateMessage');
+            table.string('dateMessage').notNullable();
         });
 
         console.log('Table messages creada');
@@ -39,8 +39,8 @@ const createMessageTable = async () => {
 }
 
 const createTable = async () => {
-    // await createProductTable();
+    await createProductTable();
     await createMessageTable();
 }
-createTable();
+module.exports  = createTable;
 
