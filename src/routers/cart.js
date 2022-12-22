@@ -1,17 +1,31 @@
 const { Router } = require('express');
 const cartRouter = Router();
-
-const cartContainer  = require('../containers/Cart');
+/* FILESYSTEM */
+// const cartContainer  = require('../daos/cart/Cart');
+// const carts = new cartContainer();
+// const productsContainer = require('../daos/product/Product');;
+// const products = new productsContainer();
+/* MONGODB */
+// const cartContainer  = require('../daos/cart/CartMongo');
+// const carts = new cartContainer();
+// const productsContainer = require('../daos/product/ProductMongo');;
+// const products = new productsContainer();
+/* FIREBASE */
+const cartContainer  = require('../daos/cart/CartFirebase');
 const carts = new cartContainer();
-const productsContainer = require('../containers/Product');;
+const productsContainer = require('../daos/product/ProductFirebase');;
 const products = new productsContainer();
+
 const date = require('../lib/utils');
 
 
-
+cartRouter.get('/', async (req, res) => {
+    const db = await carts.getAllCarts();
+    res.json(db);
+});
 
 cartRouter.get('/:idCarrito/productos', async (req, res) => {
-    const idCarrito = parseInt(req.params.idCarrito);
+    const idCarrito = req.params.idCarrito;
     const db = await carts.getCartById(idCarrito);
     if(!db){
         res.json({message: `El carrito con id: ${idCarrito} no existe`})
@@ -25,21 +39,20 @@ cartRouter.post('/', async (req, res) => {
     const db = await carts.getAllCarts();
     const idCart = db[db.length - 1];
 
-    res.json({id: idCart.id});
+    res.json({id: idCart});
 });
 
 cartRouter.post('/:idCarrito/productos/:idProductos', async (req, res) => {
     
-    const idProduct = parseInt(req.params.idProductos);
-    const idCart  = parseInt(req.params.idCarrito);
+    const idProduct = req.params.idProductos;
+    const idCart = req.params.idCarrito;
     const getProduct = await products.getProductById(idProduct);
     const getCart = await carts.getCartById(idCart);
 
     if (getCart && getProduct) {
-        getProduct.id = Math.floor(Math.random() * 999999); /* Asigno un nuevo id para evitar errores(se que se puede repetir) */ 
-        getCart.products.push(getProduct);
-        carts.updateCart(getCart);
-        res.json(getCart);       
+        const addProduct = [getProduct, ...getCart.products];
+        await carts.updateCart(idCart, {products: addProduct});
+        res.json(addProduct);       
     } else {
         res.json({message: `Alguno de los id cargados no exite`});
     }
@@ -47,7 +60,7 @@ cartRouter.post('/:idCarrito/productos/:idProductos', async (req, res) => {
 });
 
 cartRouter.delete('/:idCarrito', async (req, res) => {
-    const idCart  = parseInt(req.params.idCarrito);
+    const idCart  = req.params.idCarrito;
     const findCart = await carts.getCartById(idCart);
     if (findCart) {
         carts.deleteCartById(idCart);
@@ -59,13 +72,14 @@ cartRouter.delete('/:idCarrito', async (req, res) => {
 });
 
 cartRouter.delete('/:idCarrito/productos/:idProductos', async (req, res) => {
-    const idProduct = parseInt(req.params.idProductos);
-    const idCart  = parseInt(req.params.idCarrito);
+    const idProduct = req.params.idProductos;
+    const idCart  = req.params.idCarrito;
     const findCart = await carts.getCartById(idCart);
+    const findProduct = await findCart.products.find(product => product._id == idProduct)
     
-    const findProduct = findCart.products.find(product => product.id === idProduct);
     if (findCart && findProduct) {
-        carts.deleteProductById(idCart, idProduct);
+        const newProductArr = findCart.products.filter(product => product._id != idProduct);
+        await carts.updateCart(idCart, {products: newProductArr});
         res.json({message: `Producto con id:${idProduct} eliminado`});
     } else {
         res.json({message: `El producto o carrito cargado no exite`})
