@@ -5,7 +5,8 @@ const isAdmin = (req, res, next) => {
         next();
     } else {
         req.admin = false;
-        req.status(403).send(`No eres administrador`);
+        res.json({message: 'No eres administrador'});
+
         
     }
 }

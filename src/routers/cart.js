@@ -1,20 +1,20 @@
 const { Router } = require('express');
 const cartRouter = Router();
 /* FILESYSTEM */
-// const cartContainer  = require('../daos/cart/Cart');
-// const carts = new cartContainer();
-// const productsContainer = require('../daos/product/Product');;
-// const products = new productsContainer();
+const cartContainer  = require('../daos/cart/Cart');
+const carts = new cartContainer();
+const productsContainer = require('../daos/product/Product');;
+const products = new productsContainer();
 /* MONGODB */
 // const cartContainer  = require('../daos/cart/CartMongo');
 // const carts = new cartContainer();
 // const productsContainer = require('../daos/product/ProductMongo');;
 // const products = new productsContainer();
 /* FIREBASE */
-const cartContainer  = require('../daos/cart/CartFirebase');
-const carts = new cartContainer();
-const productsContainer = require('../daos/product/ProductFirebase');;
-const products = new productsContainer();
+// const cartContainer  = require('../daos/cart/CartFirebase');
+// const carts = new cartContainer();
+// const productsContainer = require('../daos/product/ProductFirebase');;
+// const products = new productsContainer();
 
 const date = require('../lib/utils');
 
@@ -48,7 +48,7 @@ cartRouter.post('/:idCarrito/productos/:idProductos', async (req, res) => {
     const idCart = req.params.idCarrito;
     const getProduct = await products.getProductById(idProduct);
     const getCart = await carts.getCartById(idCart);
-
+    console.log("Getcart", getProduct)
     if (getCart && getProduct) {
         const addProduct = [getProduct, ...getCart.products];
         await carts.updateCart(idCart, {products: addProduct});

@@ -5,22 +5,16 @@ class Container {
         this.fileName = fileName;
     }
     async save(object){
-        let data;
-        try {
-            const res = await fs.promises.readFile(`./${this.fileName}`, 'utf-8');
-            data = JSON.parse(res);            
-        } catch (error) {
-            data = undefined;
-        }
-
+        
+        const data = await this.getAll();
         const containerArray = data ? data : [];
         
-        const newArrProd = containerArray.find(obj => obj.id == object.id);
-        const id = Math.floor(Math.random() * 999999);
+        const newArrProd = containerArray.find(obj => obj._id == object._id);
+        const id = containerArray.length + 1;
         if (newArrProd){
             console.log('Ya existe el producto');
         } else {
-            const newProduct = {id: id, ...object }
+            const newProduct = {_id: id, ...object }
             containerArray.push(newProduct);
             fs.writeFile(`./${this.fileName}`, JSON.stringify(containerArray), 'utf-8', err => {
                 if (err) {
@@ -28,39 +22,27 @@ class Container {
                 } else {
                     console.log(`Producto con id: ${object.id} cargado exitosamente`);
                 }
-            return object.id
+            return object
             });
         }
         
     }
     async getById(id){
-        try {
-            const res = await fs.promises.readFile(`./${this.fileName}`, 'utf-8');
-            const data = JSON.parse(res);
-            const objectId = data.find(obj => obj.id === id);
-            return objectId;
-        } catch (error) {
-            return undefined;
-        }
+        const data = await this.getAll();
+        const objectId = data.find(obj => obj._id == id);
+        return objectId;
     }
-    async update(object){
-        let data;
-
-        try {
-            const res = await fs.promises.readFile(`./${this.fileName}`, 'utf-8');
-            data = JSON.parse(res)
-            
-            
-        } catch (error) {
-            data = undefined;
-        }
+    async update(id, object){
+        const data = await this.getAll();
 
         const containerArray = data ? data : [];
         
-        const findObj = containerArray.find(obj => obj.id == object.id);
+        const findObj = containerArray.find(obj => obj._id == id);
         if(findObj){ 
-            const objectToUpdate = containerArray.findIndex(obj => obj.id === object.id);
-            containerArray.splice(objectToUpdate, 1, {...object});
+            const objectToUpdate = containerArray.findIndex(obj => obj._id == id);
+            console.log(objectToUpdate)
+            const newObject = {_id: parseInt(id), ...findObj, ...object}
+            containerArray.splice(objectToUpdate, 1, newObject);
             fs.writeFile(`./${this.fileName}`, JSON.stringify(containerArray), 'utf-8', (err) => {
                 if (err) {
                     console.log(err);
@@ -86,20 +68,13 @@ class Container {
         }
     } 
     async deleteById(id){
-        let data;
-        try {
-            const res = await fs.promises.readFile(`./${this.fileName}`, 'utf-8');
-            data = JSON.parse(res);            
-        } catch (error) {
-            console.error(error)
-        }
-
+        const data = await this.getAll();
         let containerArray = data ? data : [];
 
-        const findObj = containerArray.find(obj => obj.id == id);
+        const findObj = containerArray.find(obj => obj._id == id);
         if(findObj){            
-            const newContainerArray = containerArray.filter(obj => obj.id !== id);
-            console.log(newContainerArray)
+            const newContainerArray = containerArray.filter(obj => obj._id != id);
+            
             fs.writeFile(`./${this.fileName}`, JSON.stringify(newContainerArray), 'utf-8', err => {
                 if (err) {
                     console.log(err);

@@ -2,11 +2,12 @@ const { Router } = require("express");
 const productsRouter = Router();
 
 /* FILE SYSTEM */
-// const productContainer = require('../daos/product/Product');
+const productContainer = require('../daos/product/Product');
 /* MONGODB */
 // const productContainer = require('../daos/product/ProductMongo');
 /* FIREBASE */
-const productContainer = require('../daos/product/ProductFirebase');
+// const productContainer = require('../daos/product/ProductFirebase');
+
 const products = new productContainer();
 const date = require('../lib/utils');
 const isAdmin = require('../middlewares/logAdmin');
@@ -34,9 +35,8 @@ productsRouter.get('/:id', async (req, res) => {
 productsRouter.post('/', isAdmin, async (req, res) => {
     const newProduct = { ...req.body, ...date};
     await products.saveProduct(newProduct);
-    const db = await products.getAllProducts();
 
-    res.json({db});
+    res.json({newProduct});
 });
 
 
