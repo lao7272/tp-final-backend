@@ -20,8 +20,8 @@ app.all('*', (req, res) => {
 })
 
 
-const port = 8080;
-app.listen(port, (err) => {
+const PORT = process.env.PORT  || 8080;
+app.listen(PORT, (err) => {
     if (err) throw new Error(`Error en el servidor ${err}`);
-    console.log(`RUNNING https://localhost:${port}`);
+    console.log(`RUNNING https://localhost:${PORT}`);
 });
