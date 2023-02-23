@@ -1,22 +1,13 @@
-const { Router } = require('express');
+import { Router } from "express";
 const cartRouter = Router();
-/* FILESYSTEM */
-const cartContainer  = require('../daos/cart/Cart');
-const carts = new cartContainer();
-const productsContainer = require('../daos/product/Product');;
-const products = new productsContainer();
-/* MONGODB */
-// const cartContainer  = require('../daos/cart/CartMongo');
-// const carts = new cartContainer();
-// const productsContainer = require('../daos/product/ProductMongo');;
-// const products = new productsContainer();
-/* FIREBASE */
-// const cartContainer  = require('../daos/cart/CartFirebase');
-// const carts = new cartContainer();
-// const productsContainer = require('../daos/product/ProductFirebase');;
-// const products = new productsContainer();
 
-const date = require('../lib/utils');
+import getDate from "../lib/utils.js";
+
+import Cart from "../daos/cart/CartMongo.js"
+const carts = new Cart();
+import productsContainer from "../daos/product/ProductMongo.js";
+const products = new productsContainer();;
+
 
 
 cartRouter.get('/', async (req, res) => {
@@ -34,7 +25,7 @@ cartRouter.get('/:idCarrito/productos', async (req, res) => {
 });
 
 cartRouter.post('/', async (req, res) => {
-    const newCart = {...date, products:[]};
+    const newCart = {...getDate(), products:[]};
     await carts.saveCart(newCart);
     const db = await carts.getAllCarts();
     const idCart = db[db.length - 1];
@@ -85,4 +76,4 @@ cartRouter.delete('/:idCarrito/productos/:idProductos', async (req, res) => {
         res.json({message: `El producto o carrito cargado no exite`})
     }
 });
-module.exports = cartRouter;
+export default cartRouter;

@@ -1,5 +1,4 @@
-const fs = require('fs');
-const Container = require('../../containers/Container');
+import Container from "../../containers/FsContainer.js";
 class Cart {
     constructor(timestamp, name, description, urlImg, price){
         this.name = name;
@@ -33,4 +32,4 @@ class Cart {
     }
 }
 
-module.exports = Cart;
+export default Cart;

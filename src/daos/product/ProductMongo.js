@@ -1,5 +1,5 @@
-const MongoDBContainer = require('../../containers/MongoDBContainer');
-const mongoose = require('mongoose');
+import MongoDBContainer from '../../containers/MongoDBContainer.js';
+import mongoose from 'mongoose';
 
 const ProductSchema = new mongoose.Schema({
     name: {type: String, require: true, max: 100},
@@ -49,5 +49,4 @@ class Product {
         this.container.deleteAll();
     }
 }
-
-module.exports = Product;
+export default Product;

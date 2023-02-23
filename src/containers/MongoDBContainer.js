@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 class MongoDBContainer {
     constructor(collectionName, schema){
@@ -81,4 +81,4 @@ class MongoDBContainer {
 
 }
 
-module.exports =  MongoDBContainer;
+export default  MongoDBContainer;

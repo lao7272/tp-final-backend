@@ -1,6 +1,6 @@
-const { query } = require("express");
-const admin = require("firebase-admin");
-const serviceAccount = require('../../backend-fa783-firebase-adminsdk-egsyq-efded71a02.json')
+
+import admin from "firebase-admin";
+import serviceAccount from "../../backend-fa783-firebase-adminsdk-egsyq-efded71a02.json";
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
@@ -86,4 +86,4 @@ class FirebaseContainer {
 
 }
 
-module.exports =  FirebaseContainer;
+export default  FirebaseContainer;

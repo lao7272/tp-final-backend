@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Container = require('../../containers/MongoDBContainer');
+import mongoose from 'mongoose';
+import MongoDBContainer from '../../containers/MongoDBContainer.js';
 
 const CartSchema = new mongoose.Schema({
     timestamp: {type: Number, require: true},
@@ -14,7 +14,7 @@ const CartSchema = new mongoose.Schema({
 });
 class Cart {
     constructor(){
-        this.container = new Container('carts', CartSchema);
+        this.container = new MongoDBContainer('carts', CartSchema);
     }
     async saveCart(object){
         this.container.save(object);
@@ -58,4 +58,4 @@ class Cart {
     }
 }
 
-module.exports = Cart;
+export default Cart;

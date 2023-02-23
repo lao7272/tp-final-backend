@@ -1,4 +1,4 @@
-const FirebaseContainer = require('../../containers/FirebaseContainer');
+import FirebaseContainer from "../../containers/FirebaseContainer.js";
 
 class Cart {
     constructor(){
@@ -46,4 +46,4 @@ class Cart {
     }
 }
 
-module.exports = Cart;
+export default Cart;

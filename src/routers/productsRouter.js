@@ -1,17 +1,12 @@
-const { Router } = require("express");
+import { Router } from "express"
+import getDate from "../lib/utils.js"
+import isAdmin from "../middlewares/logAdmin.js";
+
+
+import Product from "../daos/product/ProductMongo.js";
+const products = new Product();
+
 const productsRouter = Router();
-
-/* FILE SYSTEM */
-const productContainer = require('../daos/product/Product');
-/* MONGODB */
-// const productContainer = require('../daos/product/ProductMongo');
-/* FIREBASE */
-// const productContainer = require('../daos/product/ProductFirebase');
-
-const products = new productContainer();
-const date = require('../lib/utils');
-const isAdmin = require('../middlewares/logAdmin');
-
 
 
 
@@ -33,7 +28,7 @@ productsRouter.get('/:id', async (req, res) => {
 
 
 productsRouter.post('/', isAdmin, async (req, res) => {
-    const newProduct = { ...req.body, ...date};
+    const newProduct = { ...req.body, ...getDate()};
     await products.saveProduct(newProduct);
 
     res.json({newProduct});
@@ -71,5 +66,5 @@ productsRouter.delete('/:id', isAdmin, async (req, res) => {
 
 
 
-module.exports = productsRouter;
+export default productsRouter;
 

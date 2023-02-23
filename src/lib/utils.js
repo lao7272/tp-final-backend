@@ -1,6 +1,7 @@
-const getTime = () => {
+const getDate = () => {
     return {
-        timestamp: Date.now(),
+        timestamp: Date.now()
     };
 };
-module.exports = getTime();
+
+export default getDate();

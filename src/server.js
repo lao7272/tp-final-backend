@@ -1,12 +1,12 @@
-const express = require('express')
+import express from "express";
 
+
+/* ROUTES */ 
+
+import productsRouter from "./routers/productsRouter.js";
+import cartRouter from "./routers/cartRouter.js"
 
 const app = express();
-
-
-const productsRouter = require('./routers/products');
-const cartRouter = require('./routers/cart');
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -23,5 +23,5 @@ app.all('*', (req, res) => {
 const PORT = process.env.PORT  || 8080;
 app.listen(PORT, (err) => {
     if (err) throw new Error(`Error en el servidor ${err}`);
-    console.log(`RUNNING https://localhost:${PORT}`);
+    console.log(`RUNNING http://localhost:${PORT}`);
 });
