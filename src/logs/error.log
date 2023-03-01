@@ -1,0 +1,29 @@
+[2023-02-28T11:08:21.114] [ERROR] default - MongoDB error: ValidationError: avatar: Cast to string failed for value "{
+  fieldname: 'avatar',
+  originalname: 'foto.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'public/img',
+  filename: 'avatar-1677593300946-456266303.jpg',
+  path: 'public\\img\\avatar-1677593300946-456266303.jpg',
+  size: 370238
+}" (type Object) at path "avatar"
+[2023-02-28T11:17:03.559] [ERROR] default - Passport register: ReferenceError: avatar is not defined
+[2023-02-28T11:19:49.386] [ERROR] default - Passport register: ReferenceError: avatar is not defined
+[2023-02-28T11:35:36.087] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:36:21.619] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:40:30.216] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:42:32.992] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:57:53.533] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:59:06.188] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T12:04:57.627] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T19:01:23.344] [ERROR] default - Passport register: ReferenceError: logger is not defined
+[2023-02-28T19:04:05.027] [ERROR] default - Passport register: ReferenceError: logger is not defined
+[2023-02-28T19:07:04.083] [ERROR] default - Passport register: ReferenceError: err is not defined
+[2023-02-28T19:07:53.672] [ERROR] default - Passport register: ReferenceError: err is not defined
+[2023-02-28T19:08:12.458] [ERROR] default - Passport register: ReferenceError: err is not defined
+[2023-02-28T19:08:28.171] [ERROR] default - Bcrypt error: Error: data must be a string or Buffer and salt must either be a salt string or a number of rounds
+[2023-02-28T19:08:28.176] [ERROR] default - Passport register: TypeError: Cannot read properties of undefined (reading 'destination')
+[2023-02-28T19:09:16.120] [ERROR] default - Passport register: TypeError: Cannot read properties of undefined (reading 'destination')
+[2023-03-01T20:19:20.342] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.
+[2023-03-01T20:19:41.203] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { logger } from "../modules/logger/logger.js";
 
 class MongoDBContainer {
     constructor(collectionName, schema){
@@ -14,8 +15,8 @@ class MongoDBContainer {
                 serverSelectionTimeoutMS: 5000
             });
             console.log("MONGO DB conectado");
-        } catch (error) {
-            console.log('Ocurrio un error', error);
+        } catch (err) {
+            logger.error(`MongoDB error: ${err}`);
         }
     }
     
@@ -25,10 +26,9 @@ class MongoDBContainer {
         this.CRUD();
         try {
             const objectSavedModel = await this.collection.create(object);
-            let productSaved = await objectSavedModel.save();
-            console.log(productSaved);            
-        } catch (error) {
-            console.log('Error: Ocurrio un error');
+            let objSaved = await objectSavedModel.save();         
+        } catch (err) {
+            logger.error(`MongoDB error: ${err}`);
         }
     }
 
@@ -38,8 +38,8 @@ class MongoDBContainer {
         this.CRUD();
         try {
             await this.collection.updateOne({_id: id}, {$set: object});
-        } catch (error) {
-            console.log(error)
+        } catch (err) {
+            logger.error(`MongoDB error: ${err}`);
         }
     }
 
@@ -50,8 +50,8 @@ class MongoDBContainer {
         try {
             const data = await this.collection.find({});
             return data;
-        } catch (error) {
-            console.log(error,'Ocurrio un error')
+        } catch (err) {
+            logger.error(`MongoDB error: ${err}`);
         }
     }
     async getById(id){
@@ -59,8 +59,8 @@ class MongoDBContainer {
         try {
             const findId = await this.collection.findOne({_id: id }); 
             return findId;
-        } catch (error) {
-            console.log('Error: Objeto no encontrado');
+        } catch (err) {
+            logger.error(`MongoDB error: ${err}`);
         }
         }
 
@@ -70,15 +70,16 @@ class MongoDBContainer {
         try {
             const deleteById = await this.collection.deleteOne({_id: id }); 
             return deleteById;
-        } catch (error) {
-            console.log('Error: Objeto no encontrado');
+        } catch (err) {
+            logger.error(`MongoDB error: ${err}`);
         }
     }
     async deleteAll(){
         this.CRUD();
+        
         await this.collection.deleteMany({}); 
     }
 
 }
 
-export default  MongoDBContainer;
+export default MongoDBContainer;

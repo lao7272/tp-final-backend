@@ -1,59 +1,35 @@
-import fs from "fs";
+import fs from 'fs';
+import { v4 as uuidv4 } from 'uuid';
 
-class Container {
+export default class FSContainer {
     constructor(fileName){
         this.fileName = fileName;
     }
     async save(object){
-        
-        const data = await this.getAll();
-        const containerArray = data ? data : [];
-        
-        const newArrProd = containerArray.find(obj => obj._id == object._id);
-        const id = containerArray.length + 1;
-        if (newArrProd){
-            console.log('Ya existe el producto');
-        } else {
-            const newProduct = {_id: id, ...object }
-            containerArray.push(newProduct);
-            fs.writeFile(`./${this.fileName}`, JSON.stringify(containerArray), 'utf-8', err => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(`Producto con id: ${object.id} cargado exitosamente`);
-                }
-            return object
-            });
+        try {
+            const data = await this.getAll();
+            const containerArray = data ? data : [];
+            
+            const newArrProd = containerArray.find(obj => obj.id == object.id);
+            const id = uuidv4();
+            if (newArrProd){
+                console.log('Ya existe el producto');
+            } else {
+                const newProduct = {id: id, ...object }
+                containerArray.push(newProduct);
+                fs.writeFile(`./${this.fileName}`, JSON.stringify(containerArray), 'utf-8', err => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log(`Producto con id: ${object.id} cargado exitosamente`);
+                    }
+                return object
+                });
+            }
+        } catch (err) {
+            console.error(err);
         }
         
-    }
-    async getById(id){
-        const data = await this.getAll();
-        const objectId = data.find(obj => obj._id == id);
-        return objectId;
-    }
-    async update(id, object){
-        const data = await this.getAll();
-
-        const containerArray = data ? data : [];
-        
-        const findObj = containerArray.find(obj => obj._id == id);
-        if(findObj){ 
-            const objectToUpdate = containerArray.findIndex(obj => obj._id == id);
-            console.log(objectToUpdate)
-            const newObject = {_id: parseInt(id), ...findObj, ...object}
-            containerArray.splice(objectToUpdate, 1, newObject);
-            fs.writeFile(`./${this.fileName}`, JSON.stringify(containerArray), 'utf-8', (err) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(`Elemento con id: ${object.id} actualizado exitosamente`);
-                }
-            return object.id
-            });
-        } else {
-            console.log(`Elemento con id: ${object.id} no se ha encontrado`);
-        }
         
     }
     async getAll(){
@@ -67,29 +43,74 @@ class Container {
             
         }
     } 
-    async deleteById(id){
-        const data = await this.getAll();
-        let containerArray = data ? data : [];
-
-        const findObj = containerArray.find(obj => obj._id == id);
-        if(findObj){            
-            const newContainerArray = containerArray.filter(obj => obj._id != id);
+    async getById(id){
+        try {
             
-            fs.writeFile(`./${this.fileName}`, JSON.stringify(newContainerArray), 'utf-8', err => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(`Elemento con id: ${id} eliminado`);
-                }
-            });
-        } else {
-            console.log(`Elemento con id: ${id} no se ha encontrado`);
+        } catch (err) {
+            console.error(err)
+        }
+        const data = await this.getAll();
+        const objectId = data.find(obj => obj.id == id);
+        return objectId;
+    }
+    async update(id, object){
+        try {
+            const data = await this.getAll();
+    
+            const containerArray = data ? data : [];
+            
+            const findObj = containerArray.find(obj => obj.id == id);
+            if(findObj){ 
+                const objectToUpdate = containerArray.findIndex(obj => obj.id == id);
+                console.log(objectToUpdate)
+                const newObject = {id: parseInt(id), ...findObj, ...object}
+                containerArray.splice(objectToUpdate, 1, newObject);
+                fs.writeFile(`./${this.fileName}`, JSON.stringify(containerArray), 'utf-8', (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log(`Elemento con id: ${object.id} actualizado exitosamente`);
+                    }
+                return object.id
+                });
+            } else {
+                console.log(`Elemento con id: ${object.id} no se ha encontrado`);
+            }
+            
+        } catch (err) {
+            console.error(err);
+        }
+        
+    }
+    async deleteById(id){
+        try {
+            const data = await this.getAll();
+            let containerArray = data ? data : [];
+
+            const findObj = containerArray.find(obj => obj.id == id);
+            if(findObj){            
+                const newContainerArray = containerArray.filter(obj => obj.id != id);
+                
+                fs.writeFile(`./${this.fileName}`, JSON.stringify(newContainerArray), 'utf-8', err => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log(`Elemento con id: ${id} eliminado`);
+                    }
+                });
+            } else {
+                console.log(`Elemento con id: ${id} no se ha encontrado`);
+            }
+        } catch (err) {
+            console.error(err);
         }
         
         }
     deleteAll(){
-        fs.unlink('./products.json', err => console.error(err));
+        try {
+            fs.unlink(`./${this.fileName}`, err => console.error(err));
+        } catch (err) {
+            console.error(err);
+        }
     }
 }
-
-export default Container;

@@ -1,0 +1,148 @@
+[2023-02-26T10:05:35.234] [WARN] default - Pagina no encontrada:  URL: http://localhost:3000/session/login, METODO: GET
+[2023-02-26T10:05:37.115] [WARN] default - Pagina no encontrada:  URL: http://localhost:3000/session/registrar, METODO: GET
+[2023-02-26T10:07:02.727] [WARN] default - Pagina no encontrada:  URL: http://localhost:3000/session/registrar, METODO: GET
+[2023-02-26T10:07:38.231] [WARN] default - Pagina no encontrada:  URL: http://localhost:3000/session/registrar, METODO: GET
+[2023-02-26T10:08:26.474] [WARN] default - Pagina no encontrada:  URL: http://localhost:3000/session/registrar, METODO: GET
+[2023-02-26T10:08:59.306] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrpyZ, METODO: GET
+[2023-02-26T10:09:00.258] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrqBU, METODO: GET
+[2023-02-26T10:09:03.284] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrqwi, METODO: GET
+[2023-02-26T10:09:08.063] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrs5T, METODO: GET
+[2023-02-26T10:09:13.083] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrtJr, METODO: GET
+[2023-02-26T10:09:18.108] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDruYO, METODO: GET
+[2023-02-26T10:09:23.120] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrvmi, METODO: GET
+[2023-02-26T10:09:24.855] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrwBp, METODO: GET
+[2023-02-26T10:09:25.551] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrwMh, METODO: GET
+[2023-02-26T10:09:26.254] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrwXh, METODO: GET
+[2023-02-26T10:09:27.546] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrwrv, METODO: GET
+[2023-02-26T10:09:29.031] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrxD3, METODO: GET
+[2023-02-26T10:09:34.056] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDryRW, METODO: GET
+[2023-02-26T10:09:39.080] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDrzg2, METODO: GET
+[2023-02-26T10:09:44.109] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDr-ue, METODO: GET
+[2023-02-26T10:09:49.131] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs076, METODO: GET
+[2023-02-26T10:09:54.145] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs1LT, METODO: GET
+[2023-02-26T10:09:59.161] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs2Zq, METODO: GET
+[2023-02-26T10:10:04.176] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs3oC, METODO: GET
+[2023-02-26T10:10:09.199] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs50h, METODO: GET
+[2023-02-26T10:10:14.221] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs6F5, METODO: GET
+[2023-02-26T10:10:19.248] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs7Th, METODO: GET
+[2023-02-26T10:10:24.269] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs8i9, METODO: GET
+[2023-02-26T10:10:29.299] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs9wi, METODO: GET
+[2023-02-26T10:10:34.324] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsB9F, METODO: GET
+[2023-02-26T10:10:39.341] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsCNd, METODO: GET
+[2023-02-26T10:10:44.364] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsDc7, METODO: GET
+[2023-02-26T10:10:49.395] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsEqh, METODO: GET
+[2023-02-26T10:10:54.408] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsG33, METODO: GET
+[2023-02-26T10:10:59.436] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsHHb, METODO: GET
+[2023-02-26T10:11:04.453] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsIVy, METODO: GET
+[2023-02-26T10:11:09.479] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsJkX, METODO: GET
+[2023-02-26T10:11:14.505] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsKz6, METODO: GET
+[2023-02-26T10:11:19.524] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsMBV, METODO: GET
+[2023-02-26T10:11:24.550] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsNQ2, METODO: GET
+[2023-02-26T10:11:29.566] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsOeR, METODO: GET
+[2023-02-26T10:11:34.598] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsPsz, METODO: GET
+[2023-02-26T10:11:39.619] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsR5W, METODO: GET
+[2023-02-26T10:11:44.642] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsSJ_, METODO: GET
+[2023-02-26T10:11:49.654] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsTYI, METODO: GET
+[2023-02-26T10:11:54.666] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsUmc, METODO: GET
+[2023-02-26T10:11:59.677] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsV-x, METODO: GET
+[2023-02-26T10:12:04.696] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsXDH, METODO: GET
+[2023-02-26T10:12:09.713] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsYRh, METODO: GET
+[2023-02-26T10:12:14.736] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsZg8, METODO: GET
+[2023-02-26T10:12:19.793] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsavD, METODO: GET
+[2023-02-26T10:12:24.810] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsc7b, METODO: GET
+[2023-02-26T10:12:29.833] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsdM5, METODO: GET
+[2023-02-26T10:12:34.863] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsead, METODO: GET
+[2023-02-26T10:12:39.882] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsfp5, METODO: GET
+[2023-02-26T10:12:44.898] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsh1Q, METODO: GET
+[2023-02-26T10:12:49.921] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsiFv, METODO: GET
+[2023-02-26T10:12:54.935] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsjUJ, METODO: GET
+[2023-02-26T10:12:59.951] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDskig, METODO: GET
+[2023-02-26T10:13:04.968] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDslx5, METODO: GET
+[2023-02-26T10:13:09.993] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsn9a, METODO: GET
+[2023-02-26T10:13:15.008] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsoNy, METODO: GET
+[2023-02-26T10:13:20.021] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDspcH, METODO: GET
+[2023-02-26T10:13:25.040] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsqqj, METODO: GET
+[2023-02-26T10:13:30.057] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDss33, METODO: GET
+[2023-02-26T10:13:35.070] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDstHP, METODO: GET
+[2023-02-26T10:13:40.107] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsuW2, METODO: GET
+[2023-02-26T10:13:45.129] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsvkc, METODO: GET
+[2023-02-26T10:13:50.142] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDswyw, METODO: GET
+[2023-02-26T10:13:55.154] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDsyBE, METODO: GET
+[2023-02-26T10:14:00.173] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDszPf, METODO: GET
+[2023-02-26T10:14:05.201] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs-eB, METODO: GET
+[2023-02-26T10:14:10.221] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDs_sc, METODO: GET
+[2023-02-26T10:14:15.250] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDt15A, METODO: GET
+[2023-02-26T10:14:20.268] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDt2Jb, METODO: GET
+[2023-02-26T10:14:25.285] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDt3Y0, METODO: GET
+[2023-02-26T10:14:30.313] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDt4mX, METODO: GET
+[2023-02-26T10:14:35.331] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDt5-_, METODO: GET
+[2023-02-26T10:14:40.357] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDt7DS, METODO: GET
+[2023-02-26T10:14:45.382] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDt8S2, METODO: GET
+[2023-02-26T10:15:03.042] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDtClq, METODO: GET
+[2023-02-26T10:15:08.079] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDtD-g, METODO: GET
+[2023-02-26T10:15:11.996] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDtD-g, METODO: GET
+[2023-02-26T10:15:13.096] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQDtFD6, METODO: GET
+[2023-02-27T09:10:14.233] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQInz2x, METODO: GET
+[2023-02-27T09:10:46.050] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-02-27T09:15:04.472] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/session/logout?, METODO: GET
+[2023-02-27T09:16:22.679] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/session/logout?, METODO: GET
+[2023-02-27T09:16:27.797] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/session/logout?, METODO: GET
+[2023-02-27T12:14:44.623] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-02-27T12:14:57.704] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-02-27T15:56:49.026] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKF0rf, METODO: GET
+[2023-02-27T15:56:54.091] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKF257, METODO: GET
+[2023-02-27T15:57:13.774] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKF6Or, METODO: GET
+[2023-02-27T15:57:18.819] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKF87W, METODO: GET
+[2023-02-27T16:05:26.243] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKG_7P, METODO: GET
+[2023-02-27T16:11:17.588] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKIKvA, METODO: GET
+[2023-02-27T16:11:22.636] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKIM7_, METODO: GET
+[2023-02-27T16:11:27.681] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKINMw, METODO: GET
+[2023-02-27T16:11:33.470] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKIObH, METODO: GET
+[2023-02-27T16:11:38.508] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKIQ09, METODO: GET
+[2023-02-27T16:11:47.846] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKIREe, METODO: GET
+[2023-02-27T16:11:52.877] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKITWe, METODO: GET
+[2023-02-27T16:12:35.245] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKIdsX, METODO: GET
+[2023-02-27T16:14:33.496] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/socket.io/?EIO=4&transport=polling&t=OQKJ4IX, METODO: GET
+[2023-02-27T16:46:44.522] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-02-28T08:54:50.796] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-02-28T08:54:52.356] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-02-28T08:54:54.519] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-02-28T09:34:07.427] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/styles/style.css, METODO: GET
+[2023-02-28T09:34:08.390] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/styles/style.css, METODO: GET
+[2023-02-28T09:36:00.782] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/styles/style.css, METODO: GET
+[2023-02-28T09:36:01.596] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/styles/style.css, METODO: GET
+[2023-02-28T09:36:01.894] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/styles/style.css, METODO: GET
+[2023-02-28T09:36:02.106] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/styles/style.css, METODO: GET
+[2023-02-28T11:08:21.114] [ERROR] default - MongoDB error: ValidationError: avatar: Cast to string failed for value "{
+  fieldname: 'avatar',
+  originalname: 'foto.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'public/img',
+  filename: 'avatar-1677593300946-456266303.jpg',
+  path: 'public\\img\\avatar-1677593300946-456266303.jpg',
+  size: 370238
+}" (type Object) at path "avatar"
+[2023-02-28T11:17:03.559] [ERROR] default - Passport register: ReferenceError: avatar is not defined
+[2023-02-28T11:19:49.386] [ERROR] default - Passport register: ReferenceError: avatar is not defined
+[2023-02-28T11:35:36.087] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:36:21.619] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:40:30.216] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:42:32.992] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:57:53.533] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T11:59:06.188] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T12:04:57.627] [ERROR] default - MongoDB error: MongoServerError: E11000 duplicate key error collection: ecommerce.carts index: idUser_1 dup key: { idUser: null }
+[2023-02-28T18:49:56.773] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/login, METODO: POST
+[2023-02-28T18:59:21.920] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/register, METODO: POST
+[2023-02-28T19:00:40.516] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/register, METODO: POST
+[2023-02-28T19:01:23.344] [ERROR] default - Passport register: ReferenceError: logger is not defined
+[2023-02-28T19:04:05.027] [ERROR] default - Passport register: ReferenceError: logger is not defined
+[2023-02-28T19:07:04.083] [ERROR] default - Passport register: ReferenceError: err is not defined
+[2023-02-28T19:07:53.672] [ERROR] default - Passport register: ReferenceError: err is not defined
+[2023-02-28T19:08:12.458] [ERROR] default - Passport register: ReferenceError: err is not defined
+[2023-02-28T19:08:28.171] [ERROR] default - Bcrypt error: Error: data must be a string or Buffer and salt must either be a salt string or a number of rounds
+[2023-02-28T19:08:28.176] [ERROR] default - Passport register: TypeError: Cannot read properties of undefined (reading 'destination')
+[2023-02-28T19:09:16.120] [ERROR] default - Passport register: TypeError: Cannot read properties of undefined (reading 'destination')
+[2023-03-01T09:03:47.685] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/get, METODO: GET
+[2023-03-01T20:19:20.342] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.
+[2023-03-01T20:19:41.203] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.

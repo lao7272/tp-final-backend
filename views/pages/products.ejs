@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <div class="jumbotron ">
+            <% if(sessionName) { %>
+                <div>
+                    <h1> <%= sessionName %></h1>
+                    <form action="/api/logout" method="get"><input type="submit" value="Logout" class="btn btn-danger"></form>
+                </div>
+            <% } %>
+            <h2>Productos</h2>
+            <% if(dbProducts.length > 0) { %>
+
+            <div class="cardContainer">
+                <% dbProducts.forEach((prod)=> { %>
+                    <div class="card">
+                        <div class="cardTitle"><h3><%= prod.name %></h3></div>
+                        <div class="cardImg"><img alt="Imagen del producto" src=<%- prod.urlImg %>></div>
+                        <div class="cardPrice"><b>$<%= prod.price %></b></div>
+                        
+                    </div>
+                <% }); %>
+            </div>
+            <div>
+                <button class="btn btn-primary"><a href="/api/productos" style="color: black; text-decoration: none;">Carga mas productos aqui</a></button>
+            </div>
+            <% } else { %>
+                <h3>Carrito vacio</h3>
+                <button class="btn btn-primary"><a href="/api/productos" style="color: black; text-decoration: none;"> Mas productos</a></button>
+            <% } %>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>
