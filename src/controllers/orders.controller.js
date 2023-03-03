@@ -1,21 +1,18 @@
-import { Router } from "express";
+
+import * as CartService from "../services/cart.service.js";
+
+import { sendVerificationEmail } from "../modules/nodemailer/nodemailer.js";
 
 import { sendWhatsappMessage } from "../modules/twilio/twilio.js";
 
-import isAuth from "../middlewares/isAuth.js";
-import Cart from "../daos/cart/CartMongo.js";
-import { sendVerificationEmail } from "../modules/nodemailer/nodemailer.js";
 
-const cart = new Cart();
-
-const ordersRouter = Router();
-
-ordersRouter.post("/", isAuth, async (req, res) => {
-    const dbCart = await cart.getAll();
+const cartOrder = async (req, res) => {
+    const dbCart = await CartService.getCartsDB();
     const idUser = req.session.passport.user.email;
     
     
     const findCart = dbCart.find(cart => cart.idUser == idUser);
+
     if(!findCart){
         return res.json({message: "No tienes un carrito"});
     }
@@ -45,6 +42,8 @@ ordersRouter.post("/", isAuth, async (req, res) => {
     sendVerificationEmail(emailMessage);
     
     res.json({cart: products})
-})
+}
 
-export default ordersRouter;
+export {
+    cartOrder
+}

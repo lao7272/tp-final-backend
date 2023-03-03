@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import MongoDBContainer from '../../containers/MongoDBContainer.js';
+import MongoDBContainer from '../../containers/MongoDB.container.js';
 
 const CartSchema = new mongoose.Schema({
     idUser: {type: String, require: true, unique: true},

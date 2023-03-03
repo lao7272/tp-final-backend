@@ -1,4 +1,4 @@
-import MongoDBContainer from '../../containers/MongoDBContainer.js';
+import MongoDBContainer from '../../containers/MongoDB.container.js';
 import mongoose from 'mongoose';
 
 const UsersSchema = new mongoose.Schema({

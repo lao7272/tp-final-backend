@@ -1,12 +1,10 @@
 import express from "express";
-import session from 'express-session';
+import session from "./config/session/session.js";
 
 import { logger } from "./modules/logger/logger.js";
 
-import MongoStore from "connect-mongo";
-
 import passport from "passport";
-import { passportConfig } from "./modules/passport/passport.js";
+import { passportConfig } from "./config/passport/passport.js";
 
 import vars from "./config/config.js";
 
@@ -15,18 +13,14 @@ import os from "os";
 
 /* ROUTES */ 
 
-import loginRegisterRouter from "./routers/loginRegisterRouter.js";
-import productsRouter from "./routers/productsRouter.js";
-import cartRouter from "./routers/cartRouter.js";
-import ordersRouter from "./routers/ordersRouter.js";
+import loginRegisterRouter from "./routers/loginRegister.router.js";
+import productsRouter from "./routers/products.router.js";
+import cartRouter from "./routers/cart.router.js";
+import ordersRouter from "./routers/orders.router.js";
 
-const { MONGO_STORE_URL, PORT } = vars;
+const { PORT } = vars;
 
 const clusterMode = process.argv[3] === "CLUSTER";
-
-// Forever: forever start server.js 8080 CLUSTER
-// PM2: pm2 start server.js --name="Server 1" --watch -i max -- 8080 CLUSTER
-
 
 if (clusterMode && cluster.isPrimary) {
     const numCPUs = os.cpus().length
@@ -42,32 +36,16 @@ if (clusterMode && cluster.isPrimary) {
     const app = express();
     
     
-    const sessionConfig = session({
-        store: MongoStore.create({
-            mongoUrl: MONGO_STORE_URL,
-            ttl: 600
-        }),
-        secret: 'shhh',
-        resave: false,
-        saveUninitialized: false,
-        rolling: true,
-        cookie: {
-            maxAge: 600000
-        }
-    });
+    app.use(session);
     
-    app.use(sessionConfig);
-    
+    passportConfig();
     
     app.use(passport.initialize());
     app.use(passport.session());
     
-    passportConfig();
-    
-    
     app.use(express.json());
     app.use(express.urlencoded({extended: true}));
-    //app.set('view engine', 'ejs');
+    app.set('view engine', 'ejs');
     
     
     
@@ -76,7 +54,7 @@ if (clusterMode && cluster.isPrimary) {
         if(!sessionName) {
             return res.json({message: "Welcome"})
         }
-        res.json({username: sessionName});
+        res.json({message: `Welcome ${sessionName}`});
     });
     app.use('/api/carrito', cartRouter);
     app.use('/api', loginRegisterRouter);

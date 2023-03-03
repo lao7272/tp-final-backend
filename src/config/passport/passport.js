@@ -1,13 +1,13 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
 
-import { hashPassword, isValidPassword } from "../bcrypt/bcrypt.js";
+import { hashPassword, isValidPassword } from "../../modules/bcrypt/bcrypt.js";
 
-import { sendVerificationEmail } from "../nodemailer/nodemailer.js";
+import { sendVerificationEmail } from "../../modules/nodemailer/nodemailer.js";
 
-import { logger } from "../logger/logger.js";
+import { logger } from "../../modules/logger/logger.js";
 
-import User from "../../daos/users/UsersMongoDB.js"
+import User from "../../daos/users/UsersMongoDB.daos.js";
 const DBUsers = new User();
 
 const passportConfig = () => {

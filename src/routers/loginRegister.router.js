@@ -40,13 +40,7 @@ loginRegisterRouter.get('/errorAlLogear', (req, res) => {
 
 // LOGOUT
 
-loginRegisterRouter.get('/logout', async (req, res) => {
-    const sessionName = req.session.passport ? req.session.passport.user.username : "";
-    req.logout(function(err) {
-        if (err) { return next(err); }
-        res.json({message: `Bye ${sessionName}`});
-    });
-});
+loginRegisterRouter.get('/logout',);
 
 
 export default loginRegisterRouter;

@@ -76,10 +76,13 @@ class MongoDBContainer {
     }
     async deleteAll(){
         this.CRUD();
-        
-        await this.collection.deleteMany({}); 
+        try {
+            await this.collection.deleteMany({}); 
+        } catch (err) {
+            logger.error(`MongoDB error: ${err}`);
+        }
     }
-
+    
 }
 
 export default MongoDBContainer;
