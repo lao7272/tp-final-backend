@@ -1,6 +1,7 @@
 import { Router } from "express";
 import passport from "passport";
 import { upload } from "../modules/multer/multer.js";
+import * as LoginResterController from "../controllers/loginRegister.controller.js"
 
 const loginRegisterRouter = Router();
 
@@ -40,7 +41,7 @@ loginRegisterRouter.get('/errorAlLogear', (req, res) => {
 
 // LOGOUT
 
-loginRegisterRouter.get('/logout',);
+loginRegisterRouter.get('/logout', LoginResterController.logout);
 
 
 export default loginRegisterRouter;

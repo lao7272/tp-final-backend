@@ -1,10 +1,5 @@
 
 
-const register = (req, res) => {
-    req.s
-
-    res.json({messsage: ""})
-}
 
 const logout = (req, res) => {
     const sessionName = req.session.passport ? req.session.passport.user.username : "";
@@ -12,4 +7,8 @@ const logout = (req, res) => {
         if (err) { return next(err); }
         res.json({message: `Bye ${sessionName}`});
     });
+}
+
+export {
+    logout
 }

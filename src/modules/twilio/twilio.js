@@ -3,7 +3,7 @@ import { logger } from '../logger/logger.js';
 import "dotenv/config";
 const sendWhatsappMessage = async ({body}) => {
 
-    const accountSid = 'ACa4b239a3a6e733dff9ff40c64124d28d';
+    const accountSid = process.env.ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN;
 
     const client = twilio(accountSid, authToken);

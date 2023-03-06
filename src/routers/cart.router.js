@@ -1,16 +1,7 @@
 import { Router } from "express";
-
 import isAuth from "../middlewares/isAuth.js";
-
 import * as CartController from "../controllers/cart.controller.js"
 
-import { getDate } from "../lib/utils.js";
-
-import Cart from "../daos/cart/CartMongo.daos.js";
-import Product from "../daos/product/ProductMongo.daos.js";
-
-const carts = new Cart();
-const products = new Product();
 
 const cartRouter = Router();
 

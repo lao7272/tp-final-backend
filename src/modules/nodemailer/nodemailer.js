@@ -1,5 +1,6 @@
 import { createTransport } from "nodemailer";
 import { logger } from "../logger/logger.js";
+import "dotenv/config"
 
 const sendVerificationEmail = async ({email, subject, html}) => {
     try {
@@ -8,7 +9,7 @@ const sendVerificationEmail = async ({email, subject, html}) => {
             port: 587,
             auth: {
                 user: 'elfrieda.durgan@ethereal.email',
-                pass: 'fpmQ5MexVgrhUFHqEQ'
+                pass: process.env.MAIL_PASSWORD
             }
         });
     
@@ -19,14 +20,13 @@ const sendVerificationEmail = async ({email, subject, html}) => {
             text: html
         };
     
-        const info = await transporter.sendMail(opt, (err, info) => {
+        await transporter.sendMail(opt, (err, info) => {
             if (err) {
                 console.error(err);
             }
-            console.log(info)
         });
     } catch (err) {
-        logger.error(`NodeMailer:  ${err}`)
+        logger.error(`NodeMailer: ${err}`)
     }
 }
 
