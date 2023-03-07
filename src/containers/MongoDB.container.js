@@ -9,7 +9,7 @@ class MongoDBContainer {
     async CRUD () {
         try {
             const URL = 'mongodb://127.0.0.1:27017/ecommerce'
-            let res =  mongoose.connect(URL, {
+            mongoose.connect(URL, {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
                 serverSelectionTimeoutMS: 5000

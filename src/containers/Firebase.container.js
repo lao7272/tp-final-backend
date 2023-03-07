@@ -11,10 +11,7 @@ class FirebaseContainer {
         this.db = admin.firestore();
         this.collection = this.db.collection(collectionName);
     }
-    
-    CRUD(){
-        
-    }
+
     /* CREATE */
 
     async save(object){

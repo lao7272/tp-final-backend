@@ -45,13 +45,12 @@ export default class FSContainer {
     } 
     async getById(id){
         try {
-            
+            const data = await this.getAll();
+            const objectId = data.find(obj => obj.id == id);
+            return objectId;
         } catch (err) {
             console.error(err)
         }
-        const data = await this.getAll();
-        const objectId = data.find(obj => obj.id == id);
-        return objectId;
     }
     async update(id, object){
         try {
