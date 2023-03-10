@@ -79,17 +79,17 @@ const passportConfig = () => {
         try {
             const db =  await DBUsers.getAll();
             const findUser = db.find(obj => obj.email === email);
-            console.log("LOGIN", email, password)
             if (!findUser) {
                 return done(null, false)
             }
-        
+            
             const comparedPassword = findUser ? await isValidPassword(password, findUser.password) : "";
-        
+            
             if (!comparedPassword) {
                 return done(null, false)
             }
-        
+            
+            console.log("LOGIN", email, password)
             return done(null, findUser);
             
         } catch (err) {

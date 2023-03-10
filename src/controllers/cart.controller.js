@@ -1,3 +1,5 @@
+import CartDTO from "../dto/cart.dto.js";
+import ProductsDTO from "../dto/product.dto.js";
 import { getDate } from "../lib/utils.js";
 
 import * as CartService from "../services/cart.service.js";
@@ -6,7 +8,8 @@ import * as ProductService from "../services/products.service.js";
 
 
 const getCarts = async (req, res) => {
-    const db = await CartService.getCartsDB();    
+    const db = await CartService.getCartsDB();  
+
     res.json(db);
     
 }
@@ -15,10 +18,11 @@ const getCartById =  async (req, res) => {
     const idCart = req.params.idCart;
 
     const cart = await CartService.getCartByIdDB(idCart);
-    if(!cart){
-        return res.json({message: `El carrito con id: ${idCart} no existe`})
-    }
-    res.json(cart);
+    if(!cart) return res.json({message: `El carrito con id: ${idCart} no existe`});
+
+    const cartDTO = new CartDTO(cart);
+
+    res.json({...cartDTO});
 }
 
 const createCart = async (req, res) => {
@@ -31,7 +35,8 @@ const createCart = async (req, res) => {
     const db = await CartService.getCartsDB();
     const idCart = db[db.length - 1];
 
-    res.json({id: idCart});
+    const cartDTO = new CartDTO(idCart);
+    res.json({...cartDTO});
 }
 
 const addProductToCart = async (req, res) => {
@@ -44,9 +49,11 @@ const addProductToCart = async (req, res) => {
     if (!getCart && !getProduct) {
         return res.json({message: `Alguno de los id cargados no exite`});
     } 
+
     const addProduct = [getProduct, ...getCart.products];
-    await CartService.updateCartDB(idCart, {products: addProduct});
-    res.json(addProduct);  
+    const productDTO = new ProductsDTO(addProduct)
+    await CartService.updateCartDB(cartId, {products: addProduct});
+    res.json({...productDTO});  
 
 }
 
@@ -55,7 +62,7 @@ const deleteCart = async (req, res) => {
     const findCart = await carts.getById(idCart);
     if (findCart) {
         carts.deleteCartById(idCart);
-        res.json({idCart:`${idCart}`});
+        res.json({idCart:idCart});
     } else {
 
         res.json({message: `Carrito con id ${idCart} no encontrado`})
@@ -68,9 +75,7 @@ const removeProduct = async (req, res) => {
     const findCart = await CartService.getCartByIdDB(cartId);
     const findProduct = await findCart.products.find(product => product._id == productId)
     
-    if (!findCart && !findProduct) {
-        return res.json({message: `El producto o carrito cargado no exite`})
-    } 
+    if (!findCart && !findProduct) return res.json({message: `El producto o carrito cargado no exite`}); 
 
     const newProductArr = findCart.products.filter(product => product._id != productId);
     await CartService.updateCartDB(cartId, {products: newProductArr});

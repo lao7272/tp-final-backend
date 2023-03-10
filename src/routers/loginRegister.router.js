@@ -36,7 +36,7 @@ loginRegisterRouter.get('/login', (req, res) => {
 
 
 loginRegisterRouter.get('/errorAlLogear', (req, res) => {
-    res.json({error: "Fail to register"});
+    res.json({error: "Fail to login"});
 });
 
 // LOGOUT

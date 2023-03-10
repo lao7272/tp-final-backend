@@ -146,3 +146,6 @@
 [2023-03-01T09:03:47.685] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/get, METODO: GET
 [2023-03-01T20:19:20.342] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.
 [2023-03-01T20:19:41.203] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.
+[2023-03-10T09:24:36.742] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/register, METODO: POST
+[2023-03-10T09:53:03.676] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/carrito/640b26463469c42b8e71b2e9, METODO: GET
+[2023-03-10T10:33:50.290] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/carrito/640b26463469c42b8e71b2e9, METODO: GET

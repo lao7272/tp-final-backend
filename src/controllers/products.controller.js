@@ -1,4 +1,5 @@
 import { getDate } from "../lib/utils.js";
+import ProductsDTO from "../dto/product.dto.js";
 
 import * as ProductService from "../services/products.service.js"
 
@@ -10,35 +11,33 @@ const getProducts = async (req, res) => {
 }
 const getProductById = async (req, res) => {
     const product = await ProductService.getProductByIdDB(req.params.id);
-    if (!product) {
-        res.json({message: 'Producto no encontrado'})
-    }  
-    res.json(product);
+
+    if (!product) return res.json({message: 'Producto no encontrado'}); 
+    const productDTO = new ProductsDTO(product)
+    res.json({...productDTO});
 }
 const createProduct = async (req, res) => {
     const date = getDate();
-    const newProduct = { ...req.body, ...date};
+    const newProduct = { ...req.body, ...date };
     await ProductService.createProductDB(newProduct);
-    res.json({newProduct});
+    const productDTO = new ProductsDTO(newProduct);
+    res.json({...productDTO});
 }
 const updateProduct = async (req, res) => {
     const findProduct = await ProductService.getProductByIdDB(req.params.id);
-    if (findProduct) {
-        const productUpdated = {...req.body}
-        ProductService.updateProductDB(req.params.id, productUpdated);
-        res.json(productUpdated);
-    } else {
-        res.json({message: 'El producto no se encontro'})
-    }
+    if (!findProduct) return res.json({message: 'El producto no se encontro'});
+
+    const productUpdated = {...req.body}
+    ProductService.updateProductDB(req.params.id, productUpdated);
+    const productDTO = new ProductsDTO({_id: req.params.id, ...productUpdated});
+    res.json({...productDTO});
 }
 const deleteProduct = async (req, res) => {
     const findProduct = await ProductService.getProductByIdDB(req.params.id);
-    if (findProduct) {        
-        ProductService.deleteProductDB(req.params.id);
-        res.json(findProduct);
-    } else {
-        res.json({message: "El producto ya ha sido eliminado"});
-    }
+    if (!findProduct) return res.json({message: "El producto ya ha sido eliminado"});        
+
+    ProductService.deleteProductDB(req.params.id);
+    res.json(findProduct);
 }
 
 export {
