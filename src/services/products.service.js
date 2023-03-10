@@ -1,10 +1,11 @@
 import { logger } from "../modules/logger/logger.js";
-import Product from "../daos/product/ProductMongo.daos.js";
-const products = new Product();
+import DAOsFactory from "../daos/DAOsFactory.js";
+const Factory = new DAOsFactory('mongo');
+const Products = await Factory.getProductDAO();
 
 const getProductsDB = async () => {
     try {
-        return await products.getAll();
+        return await Products.getAll();
     } catch (err) {
         logger.error(`Service error: ${err}`);
     }
@@ -12,7 +13,7 @@ const getProductsDB = async () => {
 
 const getProductByIdDB = async (id) => {
     try {
-        return await products.getById(id);
+        return await Products.getById(id);
     } catch (err) {
         logger.error(`Service error: ${err}`);
     }
@@ -20,7 +21,7 @@ const getProductByIdDB = async (id) => {
 
 const createProductDB = async (object) => {
     try {
-        return await products.save(object);
+        return await Products.save(object);
     } catch (err) {
         logger.error(`Service error: ${err}`);
     }
@@ -28,14 +29,14 @@ const createProductDB = async (object) => {
 
 const updateProductDB = async (id, object) => {
     try {
-        return await products.update(id, object);
+        return await Products.update(id, object);
     } catch (err) {
         logger.error(`Service error: ${err}`);
     }
 }
 const deleteProductDB = async (id) => {
     try {
-        return await products.deleteById(id);
+        return await Products.deleteById(id);
     } catch (err) {
         logger.error(`Service error: ${err}`);
     }

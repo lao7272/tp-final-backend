@@ -7,8 +7,9 @@ import { sendVerificationEmail } from "../../modules/nodemailer/nodemailer.js";
 
 import { logger } from "../../modules/logger/logger.js";
 
-import User from "../../daos/users/UsersMongoDB.daos.js";
-const DBUsers = new User();
+import DAOsFactory from "../../daos/DAOsFactory.js";
+const Factory = new DAOsFactory();
+const User = await Factory.getUserDAO();
 
 const passportConfig = () => {
 
@@ -20,7 +21,7 @@ const passportConfig = () => {
             try{
                 const { email, tel, age, address } = req.body;
                 
-                const db = await DBUsers.getAll(); 
+                const db = await User.getAll(); 
                 const findUser = db.find(obj =>  obj.username === username && obj.email === email );
                 const comparedPassword = findUser ?  await isValidPassword(password, findUser.password) : ""; 
                 if (findUser && comparedPassword) {
@@ -41,9 +42,9 @@ const passportConfig = () => {
                 };
                 
             
-                await DBUsers.save(user);
+                await User.save(user);
                 
-                const getDb = await DBUsers.getAll();
+                const getDb = await User.getAll();
                 const getUserWithId = getDb.find(obj =>  obj.email == email && obj.password === hashedPassword && obj.username === username ); 
 
                 const verificationEmail = {
@@ -77,7 +78,7 @@ const passportConfig = () => {
         passReqToCallback: true
     }, async (req, email, password, done) => {
         try {
-            const db =  await DBUsers.getAll();
+            const db =  await User.getAll();
             const findUser = db.find(obj => obj.email === email);
             if (!findUser) {
                 return done(null, false)
@@ -111,7 +112,7 @@ const passportConfig = () => {
     });
     passport.deserializeUser(async function(obj, done) {
         try {
-            const user = await DBUsers.getById(obj._id);
+            const user = await User.getById(obj._id);
             if (!user) {
                 return done(new Error('User not found'));
             }
