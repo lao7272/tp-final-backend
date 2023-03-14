@@ -1,16 +1,18 @@
 import twilio from 'twilio';
 import { logger } from '../logger/logger.js';
-import "dotenv/config";
+import vars from '../../config/config.js';
+
+const { ACCOUNT_SID, TWILIO_AUTH_TOKEN, PHONE_NUMBER} = vars;
 const sendWhatsappMessage = async ({body}) => {
 
-    const accountSid = process.env.ACCOUNT_SID;
-    const authToken = process.env.TWILIO_AUTH_TOKEN;
+    const accountSid = ACCOUNT_SID;
+    const authToken = TWILIO_AUTH_TOKEN;
 
     const client = twilio(accountSid, authToken);
 
     const sendingPhone = '+14155238886';
 
-    const phoneNumber =  process.env.PHONE || "+5493548401102";
+    const phoneNumber =  PHONE_NUMBER;
 
     try {
         await client.messages.create({

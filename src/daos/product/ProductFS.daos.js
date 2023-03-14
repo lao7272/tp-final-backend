@@ -1,12 +1,7 @@
 
 import Container from "../../containers/FsContainer.js";
 class Product {
-    constructor(timestamp, name, description, urlImg, price){
-        this.name = name;
-        this.timestamp = timestamp;
-        this.description = description;
-        this.urlImg = urlImg;
-        this.price = price;
+    constructor(){
         this.container = new Container('products.json');
     }
     async saveProduct(object){

@@ -1,15 +1,17 @@
 import { createTransport } from "nodemailer";
 import { logger } from "../logger/logger.js";
-import "dotenv/config"
+import vars from "../../config/config.js";
 
+
+const { MAIL_PASSWORD } = vars;
 const sendVerificationEmail = async ({email, subject, html}) => {
     try {
         const transporter = createTransport({
             host: 'smtp.ethereal.email',
             port: 587,
-            auth: {
+            auth: { 
                 user: 'elfrieda.durgan@ethereal.email',
-                pass: process.env.MAIL_PASSWORD
+                pass: MAIL_PASSWORD
             }
         });
     

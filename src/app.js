@@ -5,7 +5,7 @@ import { logger } from "./modules/logger/logger.js";
 
 import passport from "passport";
 import { passportConfig } from "./config/passport/passport.js";
-
+import cors from "cors"
 
 /* ROUTES */ 
 
@@ -18,6 +18,10 @@ const app = express();
 
 
 app.use(session);
+app.use(cors({
+    origin: "http://localhost:8080",
+    credentials: true
+}));
 
 passportConfig();
 
