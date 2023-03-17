@@ -149,3 +149,10 @@
 [2023-03-10T09:24:36.742] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/register, METODO: POST
 [2023-03-10T09:53:03.676] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/carrito/640b26463469c42b8e71b2e9, METODO: GET
 [2023-03-10T10:33:50.290] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/api/carrito/640b26463469c42b8e71b2e9, METODO: GET
+[2023-03-16T08:12:59.570] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-03-16T08:13:25.760] [WARN] default - Pagina no encontrada:  URL: http://localhost:8080/productos, METODO: GET
+[2023-03-16T10:04:44.617] [ERROR] default - MongoDB error: CastError: Cast to ObjectId failed for value "Calculadora" (type string) at path "_id" for model "products"
+[2023-03-17T07:59:29.479] [WARN] default - Pagina no encontrada:  URL: http://127.0.0.1:61173/api/productos/64023560fdc81ded7f5469c6, METODO: POST
+[2023-03-17T08:02:30.252] [WARN] default - Pagina no encontrada:  URL: http://127.0.0.1:61258/api/productos/64023560fdc81ded7f5469c6, METODO: POST
+[2023-03-17T08:19:32.204] [WARN] default - Pagina no encontrada:  URL: http://127.0.0.1:61454/api/productos/6414498118e97e39e75f7447, METODO: POST
+[2023-03-17T08:20:59.233] [WARN] default - Pagina no encontrada:  URL: http://127.0.0.1:61473/api/productos/6414498118e97e39e75f7447, METODO: POST
