@@ -1,6 +1,5 @@
-import assert from "assert/strict";
 import request from "supertest";
-import app from "../app.js";
+import app from "../src/app.js";
 import {expect} from "chai";
 
 

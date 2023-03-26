@@ -28,3 +28,8 @@
 [2023-03-01T20:19:20.342] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.
 [2023-03-01T20:19:41.203] [ERROR] default - Twilio error: Error: A text message body or media urls must be specified.
 [2023-03-16T10:04:44.617] [ERROR] default - MongoDB error: CastError: Cast to ObjectId failed for value "Calculadora" (type string) at path "_id" for model "products"
+[2023-03-26T08:11:00.869] [ERROR] default - Service error: TypeError: Cannot destructure property 'object' of 'undefined' as it is undefined.
+[2023-03-26T08:11:17.156] [ERROR] default - Service error: TypeError: Cannot destructure property 'object' of 'undefined' as it is undefined.
+[2023-03-26T08:12:01.539] [ERROR] default - MongoDB error: TypeError: object is not iterable (cannot read property undefined)
+[2023-03-26T08:12:35.053] [ERROR] default - MongoDB error: TypeError: object is not iterable (cannot read property undefined)
+[2023-03-26T09:20:24.088] [ERROR] default - Service error: TypeError: Cannot destructure property 'object' of 'undefined' as it is undefined.

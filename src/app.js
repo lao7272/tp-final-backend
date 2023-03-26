@@ -7,13 +7,13 @@ import passport from "passport";
 import { passportConfig } from "./config/passport/passport.js";
 import cors from "cors"
 
+
 /* ROUTES */ 
 
 import loginRegisterRouter from "./routers/loginRegister.router.js";
 import productsRouter from "./routers/products.router.js";
 import cartRouter from "./routers/cart.router.js";
 import ordersRouter from "./routers/orders.router.js";
-
 const app = express();
 
 

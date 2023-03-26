@@ -17,10 +17,12 @@ const getProductById = async (req, res) => {
     res.json({...productDTO});
 }
 const createProduct = async (req, res) => {
+
     const date = getDate();
     const newProduct = { ...req.body, ...date };
-    await ProductService.createProductDB(newProduct);
-    const productDTO = new ProductsDTO(newProduct);
+
+    const createProductRes = await ProductService.createProductDB(newProduct);
+    const productDTO = new ProductsDTO(createProductRes);
     res.json({...productDTO});
 }
 const updateProduct = async (req, res) => {

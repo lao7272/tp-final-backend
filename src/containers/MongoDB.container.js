@@ -25,8 +25,8 @@ class MongoDBContainer {
     async save(object){
         this.CRUD();
         try {
-            const objectSavedModel = await this.collection.create(object);
-            let objSaved = await objectSavedModel.save();         
+            const objectSaved = await this.collection.create(object);
+            return objectSaved;
         } catch (err) {
             logger.error(`MongoDB error: ${err}`);
         }

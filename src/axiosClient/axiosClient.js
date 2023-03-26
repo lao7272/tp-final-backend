@@ -28,4 +28,4 @@ const deleteProd = api.delete('/api/productos/64131153d140e774d2b10bbe',{data: {
 const productsRes = await Promise.all([ getProd, getProdId, putProd, postProd, deleteProd]);
 const productsData = productsRes.map(res => res.data);
 
-console.log(productsData)
+console.log(productsData);

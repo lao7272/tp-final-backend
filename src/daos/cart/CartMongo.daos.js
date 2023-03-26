@@ -1,5 +1,5 @@
 import MongoDBContainer from '../../containers/MongoDB.container.js';
-import CartSchema from '../../models/cartSchema.js';
+import CartSchema from '../../models/mogoSquemas/cartSchema.js';
 
 class Cart extends MongoDBContainer {
     constructor(){
